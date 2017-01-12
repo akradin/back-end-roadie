@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   post '/tasks', to: 'tasks#create'
   patch '/tasks/:id', to: 'tasks#update'
   delete '/tasks/:id', to: 'tasks#destroy'
+
+  get '/expenses', to: 'expenses#index'
+  get '/expenses/:id', to: 'expenses#show'
+  post '/expenses', to: 'expenses#create'
+  patch '/expenses/:id', to: 'expenses#update'
+  delete '/expenses/:id', to: 'expenses#destroy'
 end
