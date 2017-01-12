@@ -23,4 +23,10 @@ Rails.application.routes.draw do
   post '/contacts', to: 'contacts#create'
   patch '/contacts/:id', to: 'contacts#update'
   delete '/contacts/:id', to: 'contacts#destroy'
+
+  get '/bands', to: 'bands#index'
+  get '/bands/:id', to: 'bands#show'
+  post '/bands', to: 'bands#create'
+  patch '/bands/:id', to: 'bands#update'
+  delete '/bands/:id', to: 'bands#destroy'
 end
