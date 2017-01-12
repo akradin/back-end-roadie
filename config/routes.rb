@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   post '/expenses', to: 'expenses#create'
   patch '/expenses/:id', to: 'expenses#update'
   delete '/expenses/:id', to: 'expenses#destroy'
+
+  get '/contacts', to: 'contacts#index'
+  get '/contacts/:id', to: 'contacts#show'
+  post '/contacts', to: 'contacts#create'
+  patch '/contacts/:id', to: 'contacts#update'
+  delete '/contacts/:id', to: 'contacts#destroy'
 end

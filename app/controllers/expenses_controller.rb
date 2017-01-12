@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :cost, :description)
+    params.require(:expense).permit(:name, :cost, :details)
   end
 
   def index
