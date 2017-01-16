@@ -1,8 +1,9 @@
-class BandsController < ApplicationController
+class BandsController < OpenReadController
   before_action :set_band, only: [:show, :update, :destroy]
 
   def set_band
-    @band = Band.find(params[:id])
+    # @band = Band.find(params[:id])
+    @band = current_user.bands.find(params[:id])
   end
 
   def band_params
@@ -10,7 +11,8 @@ class BandsController < ApplicationController
   end
 
   def index
-    @bands = Band.all
+    # @bands = Band.all
+    @bands = current_user.bands
 
     render json: @bands
   end
@@ -20,7 +22,8 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = Band.new(band_params)
+    # @band = Band.new(band_params)
+    @band = current_user.bands.build(band_params)
 
     if @band.save
       render json: @band, status: :created

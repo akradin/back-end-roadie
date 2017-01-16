@@ -9,6 +9,7 @@ curl --include --request POST http://localhost:4741/tasks \
       "due_date": "2017-03-01",
       "priority": 1,
       "details": "details",
-      "completed": "false"
+      "completed": "false",
+      "band_id": 2
     }
   }'

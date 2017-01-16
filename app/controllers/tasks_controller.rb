@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :due_date, :priority, :details, :completed)
+    params.require(:task).permit(:name, :due_date, :priority, :details, :completed, :band_id)
   end
 
   def index
@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = Task.new
 
     if @task.save
       render json: @task, status: :created
