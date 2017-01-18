@@ -6,11 +6,11 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :phone_number, :email, :company, :details)
+    params.require(:contact).permit(:name, :phone_number, :email, :company, :details, :band_id)
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where(:band_id => params[:band])
 
     render json: @contacts
   end

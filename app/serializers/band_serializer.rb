@@ -1,5 +1,5 @@
 class BandSerializer < ActiveModel::Serializer
-  attributes :id, :name, :tasks, :expenses
+  attributes :id, :name, :tasks, :expenses, :contacts
 
   def tasks
     object.tasks.map(&:id)
@@ -7,5 +7,9 @@ class BandSerializer < ActiveModel::Serializer
 
   def expenses
     object.expenses.map(&:id)
+  end
+
+  def contacts
+    object.contacts.map(&:id)
   end
 end

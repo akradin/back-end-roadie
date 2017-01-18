@@ -11,7 +11,8 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = Expense.where(:band_id => params[:band])
-
+    puts 'params is'
+    puts params
     render json: @expenses
   end
 

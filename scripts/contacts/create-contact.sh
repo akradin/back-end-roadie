@@ -1,4 +1,4 @@
-TOKEN="BAhJIiVkMTg4ZGE3NGZkZWYyNTcyN2ZlNzhkYjUyZGZlNDMzYwY6BkVG--509dc47a84a7c6136a1bd19bd8a19e185fdc99e3"
+TOKEN="BAhJIiViOTRiODc4N2RlZWY3NWI2NGE0OTdjYzJhNGZhMDg2NAY6BkVG--befb3e7dd7adb3a52d369e314885682245c91e9d"
 
 curl --include --request POST http://localhost:4741/contacts \
 --header "Authorization: Token token=${TOKEN}" \
@@ -9,6 +9,7 @@ curl --include --request POST http://localhost:4741/contacts \
       "phone_number": "123-456-7891",
       "email": "toast@butter.com",
       "company": "UMG",
-      "details": "a good buddy!"
+      "details": "a good buddy!",
+      "band_id": 11
     }
   }'
