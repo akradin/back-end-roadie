@@ -6,11 +6,11 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :cost, :details)
+    params.require(:expense).permit(:name, :cost, :details, :band_id)
   end
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where(:band_id => params[:band])
 
     render json: @expenses
   end

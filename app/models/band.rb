@@ -3,4 +3,5 @@ class Band < ActiveRecord::Base
   has_many :tasks
   has_many :expenses
   has_many :contacts
+  validates :name, presence: true
 end

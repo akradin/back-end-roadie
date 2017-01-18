@@ -1,4 +1,4 @@
-TOKEN="BAhJIiVkMTg4ZGE3NGZkZWYyNTcyN2ZlNzhkYjUyZGZlNDMzYwY6BkVG--509dc47a84a7c6136a1bd19bd8a19e185fdc99e3"
+TOKEN="BAhJIiUxMmE5NDIwZjk0YmZiNWZiYzRhZWU0ODNhNzhlMWIzZAY6BkVG--a85e47d99a40908022ececb3c70750ed685a8c03"
 
 curl --include --request POST http://localhost:4741/tasks \
 --header "Authorization: Token token=${TOKEN}" \
@@ -10,6 +10,6 @@ curl --include --request POST http://localhost:4741/tasks \
       "priority": 1,
       "details": "details",
       "completed": "false",
-      "band_id": 2
+      "band_id": 11
     }
   }'

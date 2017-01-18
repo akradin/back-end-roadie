@@ -10,8 +10,9 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
-
+    @tasks = Task.where(:band_id => params[:band])
+    puts 'params is'
+    puts params
     render json: @tasks
   end
 
@@ -20,7 +21,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new
+    @task = Task.new(task_params)
 
     if @task.save
       render json: @task, status: :created
