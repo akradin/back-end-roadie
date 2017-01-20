@@ -1,6 +1,6 @@
-TOKEN="BAhJIiU3OTI5YTkwNDBlNTE1OGM1NjQyMjk5NTExMjEyNDJjOAY6BkVG--bb1050a64b99423c328ca884bc5948246ecc205d"
+TOKEN="BAhJIiVhMDlmNDYwOWNiYTI0YjFmYmYzYzVjNzg4MDllNGZlNQY6BkVG--e52400258b04e14f57b990515bfc0313be65207a"
 
-curl --include --request PUT http://localhost:4741/contacts/33  \
+curl --include --request PUT http://localhost:4741/contacts/3  \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
@@ -10,6 +10,6 @@ curl --include --request PUT http://localhost:4741/contacts/33  \
       "email": "toast@butter.com",
       "company": "UMG",
       "details": "a good buddy of mine!",
-      "band_id": 14
+      "band_id": 3
     }
   }'

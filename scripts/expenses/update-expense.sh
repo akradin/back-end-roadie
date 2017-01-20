@@ -1,14 +1,14 @@
-TOKEN="BAhJIiU1NjlkYTdlNDRhZDRjYjAzZGIzNTk0M2U3MzVjNjllMgY6BkVG--886a880c5ed70bfddccf2a0e7759266b09d7fcc7"
+TOKEN="BAhJIiVlYTg0MGE1MDkxNzQ5MDVkZDcwZWNkODdlMmI3ODA2MAY6BkVG--2ef1f833ebaac080bdc38e9ab0c3182dd7150304"
 
-curl --include --request PUT http://localhost:4741/expenses/23 \
+curl --include --request PUT http://localhost:4741/expenses/2 \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "expense": {
-      "name": "vinyl",
-      "cost": 420.69,
+      "name": "pins",
+      "cost": 666.69,
       "details": "details",
-      "band_id": 14
+      "band_id": 3
 
     }
   }'

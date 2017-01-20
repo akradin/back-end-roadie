@@ -2,34 +2,31 @@ class ContactsController < ProtectedController
   before_action :set_contact, only: [:show, :update, :destroy]
 
   def set_contact
-    # @contact = Contact.find(params[:id])
-    @contact = current_user.bands.find(contact_params[:band_id]).contacts.find(params[:id])
-    puts 'contact is '
-    puts @contact
+    @contact = Contact.find(params[:id])
+    @band = current_user.bands.find(@contact.band)
+    # @contact = current_user.bands.find(contact_params[:band_id])
+                          #  .contacts.find(params[:id])
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :phone_number, :email, :company, :details, :band_id)
+    params.require(:contact)
+          .permit(:name, :phone_number, :email, :company, :details, :band_id)
   end
 
   def index
-    @contacts = Contact.where(:band_id => params[:band])
+    @contacts = current_user.bands.find(contact_params[:band_id])
+                            .contacts
 
     render json: @contacts
   end
 
   def show
-    render json: Contact.find(params[:id])
+    render json: @contact
   end
 
   def create
-    if current_user.bands.find(contact_params[:band_id])
-      @contact = Contact.new(contact_params)
-    else
-      render json: { error: 'Not Authorized' }
-    end
-    puts contact_params
-
+    @contact = current_user.bands.find(contact_params[:band_id])
+                           .contacts.build(contact_params)
     if @contact.save
       render json: @contact, status: :created
     else
@@ -44,16 +41,6 @@ class ContactsController < ProtectedController
       render json: @contact.errors, status: :unprocessible_entity
     end
   end
-
-  # def destroy
-  #   if current_user.bands.find(contact_params[:band_id])
-  #     @contact = Contact.find(params[:id])
-  #     @contact.destroy
-  #     head :no_content
-  #   else
-  #     render json: { error: 'Not Authorized' }
-  #   end
-  # end
 
   def destroy
     @contact.destroy

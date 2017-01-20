@@ -1,14 +1,14 @@
-TOKEN="BAhJIiU2MThhZjVkNTU2Y2YxN2EyYTJkNDIxMDQ0MTY2MDMxNgY6BkVG--d740f3df2a16072fb253320af112aa34ecd26290"
+TOKEN="BAhJIiU1NTMwMTk4ZTgxNGQwZDdiMWM1NTMzZGM1M2ViNzUxZgY6BkVG--42e17c34ed804ca343c61e7a03bf0d4640e8e3af"
 
 curl --include --request POST http://localhost:4741/expenses \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "expense": {
-      "name": "cds",
+      "name": "shirts",
       "cost": 420.69,
       "details": "details",
-      "band_id": 14
+      "band_id": 3
 
     }
   }'

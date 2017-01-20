@@ -1,5 +1,5 @@
-TOKEN="BAhJIiVkMTg4ZGE3NGZkZWYyNTcyN2ZlNzhkYjUyZGZlNDMzYwY6BkVG--509dc47a84a7c6136a1bd19bd8a19e185fdc99e3"
+TOKEN="BAhJIiVlNmYwZGZiOWI3YjEzZmMxNjcwOGY5ZjZjOTJkOWY3MgY6BkVG--dd2fdc438abce9e698333eef19c8b3905ce9e6be"
 
-curl --include --request GET http://localhost:4741/contacts/4 \
+curl --include --request GET http://localhost:4741/contacts/1\
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \

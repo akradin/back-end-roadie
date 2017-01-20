@@ -2,7 +2,8 @@ class TasksController < ProtectedController
   before_action :set_task, only: [:show, :update, :destroy]
 
   def set_task
-    @task = current_user.bands.find(task_params[:band_id]).tasks.find(params[:id])
+    @task = Task.find(params[:id])
+    @band = current_user.bands.find(@task.band)
   end
 
   def task_params
@@ -10,22 +11,18 @@ class TasksController < ProtectedController
   end
 
   def index
-    @tasks = Task.where(:band_id => params[:band])
-    puts 'params is'
-    puts params
+    @tasks = current_user.bands.find(task_params[:band_id]).tasks
+
     render json: @tasks
   end
 
   def show
-    render json: Task.find(params[:id])
+    render json: @task
   end
 
   def create
-    if current_user.bands.find(task_params[:band_id])
-      @task = Task.new(task_params)
-    else
-      render json: { error: 'Not Authorized' }
-    end
+    @task = current_user.bands.find(task_params[:band_id])
+                        .tasks.build(task_params)
 
     if @task.save
       render json: @task, status: :created

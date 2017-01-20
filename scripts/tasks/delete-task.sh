@@ -1,10 +1,10 @@
-TOKEN="BAhJIiViYzA0ZTZlMGNmMTQ5MmQ1YTI4ZWE0YTc2Mzk0YmI3MwY6BkVG--e4223210e8cb129482e8158ff0ff41655a005e28"
+TOKEN="BAhJIiU5NWM3MDRkMDExNGE1Yzc3ODhmOGNiM2QzMGM4OWYyNQY6BkVG--073639e1b99f56c25e66868d18f2e8d5ba167033"
 
-curl --include --request DELETE http://localhost:4741/tasks/114 \
+curl --include --request DELETE http://localhost:4741/tasks/5 \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
 --data '{
   "task": {
-    "band_id": 14
+    "band_id": 3
   }
 }'

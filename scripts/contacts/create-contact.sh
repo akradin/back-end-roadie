@@ -1,12 +1,12 @@
-TOKEN="BAhJIiU3YmU5ZDBhNmU5Njk0ZmQxMTkwYjUyYzA3M2U1Mzk4ZQY6BkVG--4789e125da1e43f5c81fb84cc0623271c14fab52"
+TOKEN="BAhJIiUwMDVjM2M1N2IzMWJjYTNkM2VmYWI1M2JiMzVmMWUxYQY6BkVG--1cd73da0e0597c466d269499f33177afeaf58cfe"
 
 curl --include --request POST http://localhost:4741/contacts \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "contact": {
-      "name": "butthole",
+      "name": "thomas",
       "phone_number": "1234567891",
-      "band_id": 14
+      "band_id": 3
     }
   }'
