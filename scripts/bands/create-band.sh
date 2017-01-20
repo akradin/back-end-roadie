@@ -1,10 +1,10 @@
-TOKEN="BAhJIiVhZTFlNzcxM2RhNDg4YzcyZjVhNmU2ZjRjY2E3ZmFiMQY6BkVG--d1e98fa0af917fbe498adcf5bfd990d8ad90e3b0"
+TOKEN="BAhJIiUxOGIzZGZhNTQ1MDE0Yzg0YjllMmI1NzQzNzc1ZTMwMQY6BkVG--dead874c1e77b0255d042135ee4533cabe45418c"
 
 curl --include --request POST http://localhost:4741/bands \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "band": {
-      "name": "scrap"
+      "name": "scrapy boy"
     }
   }'

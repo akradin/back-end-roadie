@@ -1,8 +1,11 @@
-class ContactsController < ApplicationController
+class ContactsController < ProtectedController
   before_action :set_contact, only: [:show, :update, :destroy]
 
   def set_contact
-    @contact = Contact.find(params[:id])
+    # @contact = Contact.find(params[:id])
+    @contact = current_user.bands.find(contact_params[:band_id]).contacts.find(params[:id])
+    puts 'contact is '
+    puts @contact
   end
 
   def contact_params
@@ -20,7 +23,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    if current_user.bands.find(contact_params[:band_id])
+      @contact = Contact.new(contact_params)
+    else
+      render json: { error: 'Not Authorized' }
+    end
+    puts contact_params
 
     if @contact.save
       render json: @contact, status: :created
@@ -36,6 +44,16 @@ class ContactsController < ApplicationController
       render json: @contact.errors, status: :unprocessible_entity
     end
   end
+
+  # def destroy
+  #   if current_user.bands.find(contact_params[:band_id])
+  #     @contact = Contact.find(params[:id])
+  #     @contact.destroy
+  #     head :no_content
+  #   else
+  #     render json: { error: 'Not Authorized' }
+  #   end
+  # end
 
   def destroy
     @contact.destroy

@@ -1,14 +1,15 @@
-TOKEN="BAhJIiVkMTg4ZGE3NGZkZWYyNTcyN2ZlNzhkYjUyZGZlNDMzYwY6BkVG--509dc47a84a7c6136a1bd19bd8a19e185fdc99e3"
+TOKEN="BAhJIiU3OTI5YTkwNDBlNTE1OGM1NjQyMjk5NTExMjEyNDJjOAY6BkVG--bb1050a64b99423c328ca884bc5948246ecc205d"
 
-curl --include --request PATCH http://localhost:4741/contacts/4 \
+curl --include --request PUT http://localhost:4741/contacts/33  \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "contact": {
-      "name": "scrap remote",
-      "phone_number": "123-456-7891",
+      "name": "test test",
+      "phone_number": "1234567891",
       "email": "toast@butter.com",
       "company": "UMG",
-      "details": "a good buddy of mine!"
+      "details": "a good buddy of mine!",
+      "band_id": 14
     }
   }'

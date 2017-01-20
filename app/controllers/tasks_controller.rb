@@ -1,8 +1,8 @@
-class TasksController < ApplicationController
+class TasksController < ProtectedController
   before_action :set_task, only: [:show, :update, :destroy]
 
   def set_task
-    @task = Task.find(params[:id])
+    @task = current_user.bands.find(task_params[:band_id]).tasks.find(params[:id])
   end
 
   def task_params
@@ -21,7 +21,11 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    if current_user.bands.find(task_params[:band_id])
+      @task = Task.new(task_params)
+    else
+      render json: { error: 'Not Authorized' }
+    end
 
     if @task.save
       render json: @task, status: :created

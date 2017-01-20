@@ -3,4 +3,5 @@ class Task < ActiveRecord::Base
   validates :name, presence: true
   validates :due_date, format: { with: /\d{4}\-\d{2}\-\d{2}/ }
   # validates :priority, length: { is: 1 }
+  validates :band_id, presence: true
 end

@@ -1,15 +1,12 @@
-TOKEN="BAhJIiViOTRiODc4N2RlZWY3NWI2NGE0OTdjYzJhNGZhMDg2NAY6BkVG--befb3e7dd7adb3a52d369e314885682245c91e9d"
+TOKEN="BAhJIiU3YmU5ZDBhNmU5Njk0ZmQxMTkwYjUyYzA3M2U1Mzk4ZQY6BkVG--4789e125da1e43f5c81fb84cc0623271c14fab52"
 
 curl --include --request POST http://localhost:4741/contacts \
 --header "Authorization: Token token=${TOKEN}" \
 --header "Content-Type: application/json" \
   --data '{
     "contact": {
-      "name": "scrap remote",
-      "phone_number": "123-456-7891",
-      "email": "toast@butter.com",
-      "company": "UMG",
-      "details": "a good buddy!",
-      "band_id": 11
+      "name": "butthole",
+      "phone_number": "1234567891",
+      "band_id": 14
     }
   }'

@@ -1,5 +1,10 @@
-TOKEN="BAhJIiVkMTg4ZGE3NGZkZWYyNTcyN2ZlNzhkYjUyZGZlNDMzYwY6BkVG--509dc47a84a7c6136a1bd19bd8a19e185fdc99e3"
+TOKEN="BAhJIiVjMzM1YzhmZjA2OWNhY2JkZjIzNDZhZjI3MTlhYzQxNwY6BkVG--ad4482a15170687a9ae84880f99a778b2cea3bc8"
 
-curl --include --request DELETE http://localhost:4741/contacts/4 \
+curl --include --request DELETE http://localhost:4741/contacts/36 \
 --header "Authorization: Token token=${TOKEN}" \
---header "Content-Type: application/json"
+--header "Content-Type: application/json" \
+--data '{
+  "expense": {
+    "band_id": 14
+  }
+}'

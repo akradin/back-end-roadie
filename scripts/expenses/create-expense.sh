@@ -1,4 +1,4 @@
-TOKEN="BAhJIiViOTRiODc4N2RlZWY3NWI2NGE0OTdjYzJhNGZhMDg2NAY6BkVG--befb3e7dd7adb3a52d369e314885682245c91e9d"
+TOKEN="BAhJIiU2MThhZjVkNTU2Y2YxN2EyYTJkNDIxMDQ0MTY2MDMxNgY6BkVG--d740f3df2a16072fb253320af112aa34ecd26290"
 
 curl --include --request POST http://localhost:4741/expenses \
 --header "Authorization: Token token=${TOKEN}" \
@@ -8,7 +8,7 @@ curl --include --request POST http://localhost:4741/expenses \
       "name": "cds",
       "cost": 420.69,
       "details": "details",
-      "band_id": 11
+      "band_id": 14
 
     }
   }'

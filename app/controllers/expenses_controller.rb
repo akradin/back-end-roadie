@@ -1,8 +1,8 @@
-class ExpensesController < ApplicationController
+class ExpensesController < ProtectedController
   before_action :set_expense, only: [:show, :update, :destroy]
 
   def set_expense
-    @expense = Expense.find(params[:id])
+    @expense = current_user.bands.find(expense_params[:band_id]).expenses.find(params[:id])
   end
 
   def expense_params
@@ -21,7 +21,11 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    if current_user.bands.find(expense_params[:band_id])
+      @expense = Expense.new(expense_params)
+    else
+      render json: { error: 'Not Authorized' }
+    end
 
     if @expense.save
       render json: @expense, status: :created
