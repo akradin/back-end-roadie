@@ -12,6 +12,7 @@ class TasksController < ProtectedController
 
   def index
     @tasks = current_user.bands.find(task_params[:band_id]).tasks
+                         .order(:priority)
 
     render json: @tasks
   end
